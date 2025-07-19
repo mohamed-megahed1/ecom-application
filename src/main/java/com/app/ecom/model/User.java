@@ -1,7 +1,11 @@
-package model;
+package com.app.ecom.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -20,6 +24,10 @@ public class User {
    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
    @JoinColumn(name = "address_id",referencedColumnName = "id")
     private Address address;
+   @CreationTimestamp
+   private LocalDateTime createdAt;
+   @UpdateTimestamp
+   private LocalDateTime updatedAt;
 
 
 
