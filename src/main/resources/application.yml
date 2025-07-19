@@ -1,0 +1,16 @@
+#spring.application.name=ecom-application
+#spring.h2.console.enabled=true
+# spring.datasource.url=
+
+spring:
+  application:
+    name: ecom-application
+  h2:
+    console:
+      enabled: true
+    datasource:
+      url:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
