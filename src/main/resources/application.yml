@@ -1,16 +1,48 @@
 #spring.application.name=ecom-application
 #spring.h2.console.enabled=true
 # spring.datasource.url=
+#management.endpoints.web.exposure.include=*
+#management.endpoint.health.show-details=always
+
 
 spring:
   application:
     name: ecom-application
-  h2:
-    console:
-      enabled: true
-    datasource:
-      url:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mohamed-megahed
+    username: mohamed-megahed
+    password: password
   jpa:
+    database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: create
+        ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+#  h2:
+#    console:
+#      enabled: true
+#    datasource:
+#      url:
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-de tails: always
+  info:
+      env:
+        enabled: true
+info:
+    app:
+      name: MyNewApp
+      description: App build by mohamed megahed
+      version:  1.0.0
+
